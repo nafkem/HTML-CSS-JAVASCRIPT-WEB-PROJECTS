@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Nafkem Scrolling Website</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+		<body>
+			<header>
+				<a href="#" class="logo">Logo</a>
+				<ul>
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</header>
+			<section>
+				<img src="stars.png" id="stars">
+				<img src="moon.png" id="moon">
+				<img src="mount_behind.png" id="mount_behind">
+				<h2 id="text">Moon Light</h2>
+				<a href="#sec" id="btn">Explore</a>
+				<img src="mount_front.png" id="mount_front">
+			</section>
+			<div class="sec" id="sec">
+				<h2>Parallax Scrolling Effects</h2>
+				<p>Step 3 - Go to your default VPC dashboard and select create a new route table Give it name "privateRT", select your VPC, Create route table Select the newly created route table,click on "Routes"
+                Click "edit routes", click "add route"Under destination input "0.0.0.0/0"  and target Nat gateway, select the NATGW created in Step 2, Save changes<br><br>
+				Select the default route table,click on subnet associations, unselect one of your subnets,note the subnet ID(this is the subnet where you would be creating your private instance)<br><br>
+				Click save associations	Select the new route table you created,click subnet associations ->edit subnet associations-->select the subnet you unselected in the step above -->save associations<br><br></p>
+				Select the default route table,click on subnet associations, unselect one of your subnets,note the subnet ID(this is the subnet where you would be creating your private instance)<br><br>
+				Click save associations	Select the new route table you created,click subnet associations ->edit subnet associations-->select the subnet you unselected in the step above -->save associations<br><br></p>
+			</div>
+			<script>
+				let stars = document.getElementById('stars');
+				let moon = document.getElementById('moon');
+				let mount_behind = document.getElementIdBy('mount_behind');
+				let text =document.getElementById('text');
+				let btn =document.getElementById('btn');
+				let mount_front =document.getElementById('mount_front')
+				let header = document.querySelector('header');
+
+				window.addEventListener('scroll', function(){
+					let value = window.scrollY;
+					stars.style.left = value *0.25 + 'px';
+					moon.style.top = value *1.05 + 'px';
+					mount_behind.style.top = value * 0.5 + 'px';
+					mount_front.style.top = value * 0 + 'px';
+					text.style.marginRight = value * 4 + 'px';
+					text.style.marginTop = value * 1.5 + 'px';
+					btn.style.marginTop = value * 1.5 + 'px';
+					header.style.top = value * 0.5 + 'px';		
+				})
+			</script>
+		</body>
+		</html>
+
